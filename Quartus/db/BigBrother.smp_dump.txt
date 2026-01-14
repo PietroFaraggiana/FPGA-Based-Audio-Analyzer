@@ -1,0 +1,43 @@
+
+State Machine - |BigBrother|lockin_math_top:u_lockin_math_top|lockin_controller:u_lockin_controller|state
+Name state.S_OUTPUT state.S_WAIT_MIX state.S_MIX_START state.S_WAIT_DATA state.S_FETCH state.S_IDLE 
+state.S_IDLE 0 0 0 0 0 0 
+state.S_FETCH 0 0 0 0 1 1 
+state.S_WAIT_DATA 0 0 0 1 0 1 
+state.S_MIX_START 0 0 1 0 0 1 
+state.S_WAIT_MIX 0 1 0 0 0 1 
+state.S_OUTPUT 1 0 0 0 0 1 
+
+State Machine - |BigBrother|lockin_math_top:u_lockin_math_top|frequency_controller_top:u_frequency_controller_top|display_control:u_display|state
+Name state.S_IDLE state.S_UPDATE state.S_CONVERT 
+state.S_IDLE 0 0 0 
+state.S_CONVERT 1 0 1 
+state.S_UPDATE 1 1 0 
+
+State Machine - |BigBrother|fft_top:u_fft_top|fft_controller:u_fft_controller|state_reg
+Name state_reg.S_DONE state_reg.S_MAG_OUTPUT state_reg.S_MAG_WAIT_VALID state_reg.S_MAG_START_CALC state_reg.S_MAG_READ_ADDR state_reg.S_COMPUTE_WRITE state_reg.S_COMPUTE_WAIT_VALID state_reg.S_COMPUTE_START_BFY state_reg.S_COMPUTE_READ_ADDR state_reg.S_COMPUTE_INIT state_reg.S_LOAD_WRITE state_reg.S_LOAD_READ_REQ state_reg.S_IDLE 
+state_reg.S_IDLE 0 0 0 0 0 0 0 0 0 0 0 0 0 
+state_reg.S_LOAD_READ_REQ 0 0 0 0 0 0 0 0 0 0 0 1 1 
+state_reg.S_LOAD_WRITE 0 0 0 0 0 0 0 0 0 0 1 0 1 
+state_reg.S_COMPUTE_INIT 0 0 0 0 0 0 0 0 0 1 0 0 1 
+state_reg.S_COMPUTE_READ_ADDR 0 0 0 0 0 0 0 0 1 0 0 0 1 
+state_reg.S_COMPUTE_START_BFY 0 0 0 0 0 0 0 1 0 0 0 0 1 
+state_reg.S_COMPUTE_WAIT_VALID 0 0 0 0 0 0 1 0 0 0 0 0 1 
+state_reg.S_COMPUTE_WRITE 0 0 0 0 0 1 0 0 0 0 0 0 1 
+state_reg.S_MAG_READ_ADDR 0 0 0 0 1 0 0 0 0 0 0 0 1 
+state_reg.S_MAG_START_CALC 0 0 0 1 0 0 0 0 0 0 0 0 1 
+state_reg.S_MAG_WAIT_VALID 0 0 1 0 0 0 0 0 0 0 0 0 1 
+state_reg.S_MAG_OUTPUT 0 1 0 0 0 0 0 0 0 0 0 0 1 
+state_reg.S_DONE 1 0 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |BigBrother|top_audio:u_top_audio|i2c_config_codec_standard:u_i2c_config_codec_standard|state
+Name state.S_STOP2 state.S_STOP1 state.S_ACK_HIGH state.S_ACK_LOW state.S_BIT_HIGH state.S_BIT_LOW state.S_START state.S_IDLE state.S_DONE 
+state.S_IDLE 0 0 0 0 0 0 0 0 0 
+state.S_START 0 0 0 0 0 0 1 1 0 
+state.S_BIT_LOW 0 0 0 0 0 1 0 1 0 
+state.S_BIT_HIGH 0 0 0 0 1 0 0 1 0 
+state.S_ACK_LOW 0 0 0 1 0 0 0 1 0 
+state.S_ACK_HIGH 0 0 1 0 0 0 0 1 0 
+state.S_STOP1 0 1 0 0 0 0 0 1 0 
+state.S_STOP2 1 0 0 0 0 0 0 1 0 
+state.S_DONE 0 0 0 0 0 0 0 1 1 
