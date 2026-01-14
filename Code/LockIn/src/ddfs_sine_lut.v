@@ -15,8 +15,6 @@ module ddfs_sine_lut #(
     output reg signed [LUT_BITS-1:0] cosine_out
 );
 
-    (* ram_init_file = HEX_FILE *) 
-    (* romstyle = "M4K" *)
     // ROM Memory Array
     reg signed [LUT_BITS-1:0] sine_rom [0:(1<<LUT_DEPTH)-1];
 

@@ -31,7 +31,7 @@ module fft_vga_visualizer (
     parameter MAG_SCALE_SHIFT = 10; 
 
     // Ram Declaration: 2 banks of 512x9 bits each
-    (* ramstyle = "M4K" *) reg [8:0] video_ram [0:1023]; // Vedere se riesco a eliminare ramstyle = "M4K" 
+    reg [8:0] video_ram [0:1023];
     
     // Registers for buffer management
     reg active_read_bank; 

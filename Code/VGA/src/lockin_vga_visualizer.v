@@ -35,7 +35,7 @@ module lockin_vga_visualizer #(
     // RAM Declaration: 2 Banks
     // Siize is 1023 to cover the address gap introduced by bit concatenation.
     // Address space used: 0-319 (Bank0) and 512-831 (Bank1).
-    (* ramstyle = "M4K, no_rw_check" *) reg [17:0] video_ram [0:1023];
+    reg [17:0] video_ram [0:1023];
 
     // Registers for buffer management
     reg active_read_bank; 

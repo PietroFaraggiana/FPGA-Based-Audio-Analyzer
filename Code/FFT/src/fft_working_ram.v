@@ -19,10 +19,8 @@ module fft_working_ram #(
     input wire i_wr_en_b,
     output reg [DATA_WIDTH-1:0] o_data_b
 );
-
-    // Force M4K block usage and disable Read-During-Write checks logic
-    // On older FPGAs, the M4K hardware don't automatically handle the conflict ("Read-During-Write") without additional circuitry. The synthesizer, to be safe, tended not to use the M4K but instead built the RAM with thousands of flip-flops (logic), exhausting the chip. The command forced the use of the M4K, bypassing the conflict check.
-    (* ramstyle = "no_rw_check" *) reg [DATA_WIDTH-1:0] ram_memory [0:BUFFER_DEPTH-1];
+    // RAM memory declaration
+    reg [DATA_WIDTH-1:0] ram_memory [0:BUFFER_DEPTH-1];
     // Port A
     always @(posedge clk) begin
         if (i_wr_en_a) begin

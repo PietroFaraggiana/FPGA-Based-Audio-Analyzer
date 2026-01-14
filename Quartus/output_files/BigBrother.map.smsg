@@ -1,3 +1,0 @@
-Info (10281): Verilog HDL Declaration information at vga_controller.v(17): object "h_sync" differs only in case from object "H_SYNC" in the same scope
-Info (10281): Verilog HDL Declaration information at vga_controller.v(18): object "v_sync" differs only in case from object "V_SYNC" in the same scope
-Warning (10268): Verilog HDL information at lp_cic_filter.v(40): always construct contains both blocking and non-blocking assignments
